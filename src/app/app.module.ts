@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
