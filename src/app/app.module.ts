@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpModule} from '@angular/Http';
+import {HttpModule} from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { BlogService } from './shared/services/blog.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [BlogService],
   bootstrap: [AppComponent]
