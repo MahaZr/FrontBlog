@@ -7,8 +7,9 @@ import { Http } from '@angular/http';
 export class BlogService {
 
   constructor(private http:Http) {  }
-  public listerArts(idAut:string){
-    return this.http.get('http://localhost:3001/article/listerArts/' + idAut);
+  public listerArts(idArt:string){
+    return this.http.get('http://localhost:3001/article/consulterArt/'+idArt);
+    
   }
 }
  

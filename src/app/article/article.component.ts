@@ -14,13 +14,14 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {
     this.article.listerArts(this.idArt).subscribe(file=>{
       this.art=file.json();
-      console.log(file.json);
+      console.log(this.idArt);
+      console.log(file.json());
   })
   };
   loadarticle(){
     this.article.listerArts(this.idArt).subscribe(file=>{
         this.art=file.json();
-        console.log(file.json);
+        console.log(file.json());
     })
   }
 
