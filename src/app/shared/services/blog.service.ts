@@ -9,7 +9,7 @@ export class BlogService {
 
   constructor(private http:Http) {  }
   public listerArts(idAut:string){
-    return this.http.get('localhost:3001/article/listerArts/' + idAut);
+    return this.http.get('http://localhost:3001/article/listerArts/' + idAut);
   }
 }
  
