@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
-import { BlogService } from './shared/services/blog.service';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +19,7 @@ import { BlogService } from './shared/services/blog.service';
     AppRoutingModule,
     HttpModule,
   ],
-  providers: [BlogService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
