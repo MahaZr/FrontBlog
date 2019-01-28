@@ -18,11 +18,11 @@ export class ArticleComponent implements OnInit {
       console.log(file.json());
   })
   };
-  loadarticle(){
-    this.article.listerArts(this.idArt).subscribe(file=>{
-        this.art=file.json();
-        console.log(file.json());
-    })
-  }
+  // loadarticle(){
+  //   this.article.listerArts(this.idArt).subscribe(file=>{
+  //       this.art=file.json();
+  //       console.log(file.json());
+  //   })
+  // }
 
 }
