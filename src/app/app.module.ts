@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     ArticleComponent,
     NavbarComponent,
+    LoginComponent,
     RegisterComponent,
     
   ],
