@@ -8,7 +8,14 @@ import { Http } from '@angular/http';
 export class RegisterService {
 
   constructor(private http: Http) {}
-  public ApiRegister(user){
-    return this.http.post('http://localhost:3001/register/register', user);
+  public ApiRegister(nom,prenom,email,pwd){
+    return this.http.post('http://localhost:3001/register/register', {
+
+    name : nom,
+    lastname : prenom,
+    email : email,
+    password : pwd
+
+    });
   }
 }

@@ -12,8 +12,15 @@ import{NgForm}from '@angular/forms';
 export class RegisterComponent implements OnInit {
 nom :string;
 prenom:string;
-email :string;
+mail :string;
 pwd:string;
+
+users = {
+  name : this.nom,
+  lastname:this.prenom,
+  email : this.mail,
+  password:this.pwd
+};
 public new;
   constructor(private regUser:RegisterService) { }
 
@@ -23,14 +30,9 @@ public new;
 
 
   registerUser(){
-    const user = {
-      name : this.nom,
-      lastname:this.prenom,
-      email : this.email,
-      password:this.pwd
-    };
-   console.log(user);
-    this.regUser.ApiRegister(user).subscribe(file=>{
+    
+  
+    this.regUser.ApiRegister(this.nom, this.prenom, this.mail, this.pwd).subscribe(file=>{
           this.new=file.json();
           console.log(file.json());
       })
