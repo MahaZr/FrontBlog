@@ -5,16 +5,14 @@ import{RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
-  {
-    //path: 'article', component: ArticleComponent
-    //path:'register', component: RegisterComponent
-    //path: 'login", component: LoginComponent
-  },
-  {
+  { path: 'article', component: ArticleComponent },
+  {path:'register', component: RegisterComponent },
+  {path: 'login', component: LoginComponent }
+  //{
     //path: '**', redirectTo: 'article'
     //path:'**' , redirectTo: 'register'
     //path:'**', redirectTo: 'login'
-  }
+  //}
 ];
 
 @NgModule({
@@ -22,3 +20,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [ArticleComponent, RegisterComponent, LoginComponent]
