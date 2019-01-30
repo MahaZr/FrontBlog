@@ -6,7 +6,7 @@
     <div class="modal-content">
       <!--formulaire-->
 
-      <Form (ngSubmit)="registerUser(f)">
+      <Form >
         <div class="form-group">
           <label for="exampleInputEmail1">Name :</label>
           <input [(ngModel)]="nom" name="nom" class="form-control" placeholder="Enter your Name">
@@ -29,7 +29,7 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="registerUser()">Submit</button>
       </Form>
 
 
