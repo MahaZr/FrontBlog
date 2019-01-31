@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
     };
     console.log(user);
     this.logUser.ApiLogin(user).subscribe(file=>{
-          console.log(file.json());
+           this.new=file.json();
+          console.log(this.new);
       })
 }
 
