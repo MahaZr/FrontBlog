@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
       password :this.pwd
     };
     console.log(user);
-    this.logUser.ApiLogin(user).subscribe(file=>{
+    this.logUser.ApiLogin(this.new).subscribe(file=>{
           console.log(file.json());
       })
 }
-
 }
+
+
 
