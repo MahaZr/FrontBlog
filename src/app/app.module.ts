@@ -6,12 +6,14 @@ import{ FormsModule} from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    routingComponents
+    routingComponents,
+    HomeComponent
     
   ],
   imports: [
