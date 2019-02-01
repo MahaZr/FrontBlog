@@ -15,12 +15,7 @@ prenom:string;
 mail :string;
 pwd:string;
 
-users = {
-  name : this.nom,
-  lastname:this.prenom,
-  email : this.mail,
-  password:this.pwd
-};
+user ={};
 public new;
 
   constructor(private regUser:RegisterService) { }
@@ -31,14 +26,9 @@ public new;
 
 
   registerUser(){
-    var user = {
-      name : this.nom,
-      lastname:this.prenom,
-      email : this.mail,
-      password:this.pwd
-    };
-   console.log(user);
-    this.regUser.ApiRegister(user).subscribe(file=>{
+   
+   console.log(this.user);
+    this.regUser.ApiRegister(this.user).subscribe(file=>{
           this.new=file.json();
           console.log(file.json());
       })

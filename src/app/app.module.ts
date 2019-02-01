@@ -16,9 +16,10 @@ import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpModule,
-    FormsModule
+    HttpModule
+    
 
   ],
   providers: [],
