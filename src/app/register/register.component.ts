@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{RegisterService} from '../shared/services/register.service';
+import { Router } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ pwd:string;
 user ={};
 public new;
 
-  constructor(private regUser:RegisterService) { }
+  constructor(private regUser:RegisterService, private routes : Router) { }
  
   ngOnInit() {
 
@@ -31,6 +32,7 @@ public new;
     this.regUser.ApiRegister(this.user).subscribe(file=>{
           this.new=file.json();
           console.log(file.json());
+          this.routes.navigate(['/home']);
       })
 
   //}
