@@ -1,5 +1,6 @@
 <!-- Large modal -->
- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">S'ENREGISTRER</button> 
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -7,14 +8,6 @@
       <!--formulaire-->
 
       <Form >
-        <div class="form-group">
-          <label for="exampleInputEmail1">Name :</label>
-          <input [(ngModel)]="nom" name="nom" class="form-control" placeholder="Enter your Name">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Last Name :</label>
-          <input [(ngModel)]="prenom" class="form-control" placeholder="Enter your Last Name">
-        </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" [(ngModel)]='mail' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -25,14 +18,10 @@
           <label for="exampleInputPassword1">Password</label>
           <input type="password" [(ngModel)]='pwd' class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="button" class="btn btn-primary" (click)="registerUser()">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="loginUser()">Submit</button>
       </Form>
 
- 
+
 
       <!---->
       
