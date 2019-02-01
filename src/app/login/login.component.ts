@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   mail :string;
   pwd:string;
   public new;
+  public user ={};
 
   constructor(private logUser:LoginService) { }
 
@@ -18,14 +19,12 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    var user = {
-      email :this.mail,
-      password :this.pwd
-    };
-    console.log(user);
-    this.logUser.ApiLogin(user).subscribe(file=>{
-           this.new=file.json();
-          console.log(this.new);
+    
+    console.log(this.user);
+    this.logUser.ApiLogin(this.user).subscribe(res=>{
+           localStorage.setItem('token',res.json().token);
+          console.log(res.json().token);
+          console.log(res.json().message);
       })
 }
 
