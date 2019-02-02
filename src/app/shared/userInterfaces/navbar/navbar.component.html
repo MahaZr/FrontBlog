@@ -35,15 +35,21 @@
       <li class="nav-item">
         
           
-            <h6 ><a class="nav-link" routerLink="/register" routerLinkActive="active" >register</a></h6>
+            <h6 ><a class="nav-link" routerLink="/register" routerLinkActive="active" *ngIf="!login.loggedIn()">register</a></h6>
          
       </li>
       <li class="nav-item">
         
           
-        <h6><a class="nav-link" routerLink="/login" routerLinkActive="active" >login</a></h6>
+        <h6><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!login.loggedIn()">login</a></h6>
      
   </li>
+  <li class="nav-item">
+        
+          
+      <h6><a class="nav-link" style="cursor :pointer !important;" *ngIf="login.loggedIn()" (click)= "logout()">logout</a></h6>
+   
+</li>
       
       
       
