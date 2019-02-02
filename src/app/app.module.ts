@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './shared/auth.guard';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
+import { ArtbyautComponent } from './artbyaut/artbyaut.component';
 
 
 
@@ -18,7 +19,8 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
     AppComponent,
     NavbarComponent,
     routingComponents,
-    HomeComponent
+    HomeComponent,
+    ArtbyautComponent
 
   ],
   imports: [

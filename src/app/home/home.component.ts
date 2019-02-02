@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../shared/services/home.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,19 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private homeServ : HomeService, private routes : Router) { }
+  constructor(private homeServ : HomeService, private routes : Router, private log : LoginService) { }
 public articles;
   ngOnInit() {
 
     this.homeServ.home('all').subscribe(file=>{
       this.articles=file.json();
       console.log(file.json());
+      if(!this.log.loggedIn()) {
+        this.articles=[];
+        for(let i = 0 ; i<4 ; i++){
+          this.articles[i] = file.json()[i];
+        }
+      }
   })
 
   }

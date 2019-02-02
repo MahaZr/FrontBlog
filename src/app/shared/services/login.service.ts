@@ -13,6 +13,9 @@ export class LoginService {
   public loggedIn(){
     return !!localStorage.getItem('token');
   }
+  public logout(){
+    localStorage.removeItem('token');
+  }
   public getToken(){
     return localStorage.getItem('token');
   }

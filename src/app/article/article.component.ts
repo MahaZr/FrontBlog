@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../shared/services/blog.service';
-import { ActivatedRoute, ParamMap } from '@angular/router'
+import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
 
 
@@ -13,7 +13,7 @@ export class ArticleComponent implements OnInit {
   public idArt = "";
   public art;
   public status = false;
-  constructor(private article: BlogService, private routes: ActivatedRoute) { }
+  constructor(private article: BlogService, private routes: ActivatedRoute, private rt : Router) { }
 
   ngOnInit() {
     //let id = this.routes.snapshot.paramMap.get('id');
@@ -27,9 +27,16 @@ export class ArticleComponent implements OnInit {
       this.art = file;
       console.log(this.idArt);
       console.log(file);
+      
       this.status = true;
     }, err => console.log(err))
   };
+
+  onSelect(aut){
+
+    this.rt.navigate(['/artbyaut',aut]); 
+
+  }
   // loadarticle(){
   //   this.article.listerArts(this.idArt).subscribe(file=>{
   //       this.art=file.json();
