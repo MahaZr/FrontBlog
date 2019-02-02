@@ -5,9 +5,10 @@ import{RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  { path: 'article', component: ArticleComponent },
+  { path: 'article/:id', component: ArticleComponent, canActivate : [AuthGuard] },
   {path:'register', component: RegisterComponent },
   {path: 'login', component: LoginComponent },
   {path:'nav',component:NavbarComponent},

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import{BlogService} from '../shared/services/blog.service';
+import { BlogService } from '../shared/services/blog.service';
+import { ActivatedRoute, ParamMap } from '@angular/router'
+
+
 
 @Component({
   selector: 'app-article',
@@ -7,16 +10,25 @@ import{BlogService} from '../shared/services/blog.service';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
- public idArt="5c47724f93ffbf0d241c2dd9";
- public art;
-  constructor(private article:BlogService) { }
+  public idArt = "";
+  public art;
+  public status = false;
+  constructor(private article: BlogService, private routes: ActivatedRoute) { }
 
   ngOnInit() {
-    this.article.listerArts(this.idArt).subscribe(file=>{
-      this.art=file.json();
+    //let id = this.routes.snapshot.paramMap.get('id');
+    this.routes.paramMap.subscribe((params: ParamMap) => {
+      let id = params.get('id');
+      this.idArt = id;
+    });
+
+
+    this.article.listerArts(this.idArt).subscribe(file => {
+      this.art = file;
       console.log(this.idArt);
-      console.log(file.json());
-  })
+      console.log(file);
+      this.status = true;
+    }, err => console.log(err))
   };
   // loadarticle(){
   //   this.article.listerArts(this.idArt).subscribe(file=>{
