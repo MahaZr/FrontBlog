@@ -7,6 +7,7 @@ import { NavbarComponent } from './shared/userInterfaces/navbar/navbar.component
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './shared/auth.guard';
 import { ArtbyautComponent } from './artbyaut/artbyaut.component';
+import { DashComponent } from './dash/dash.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path:'nav',component:NavbarComponent},
   {path:'home',component:HomeComponent},
+  {path: 'dash', component:DashComponent},
   {path:"**",component:HomeComponent}
   /*{
      path: '', redirectTo: 'home'
