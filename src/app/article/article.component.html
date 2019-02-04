@@ -78,7 +78,7 @@
 <!-- Page Content -->
 <div class="container">
 
-  <div class="row">
+  <div class="row" *ngIf="status">
 
     <!-- Post Content Column -->
     <div class="col-md-12">
@@ -99,8 +99,7 @@
       <!-- Author -->
 
       <h6>by
-        <a href="#">{{art.auteur}}</a>
-      </h6>
+        <a (click)="onSelect(art.auteur)">{{art.auteur}}</a></h6>
 
 
 
@@ -109,6 +108,20 @@
 
 
       <p>{{art.contenu}}</p>
+      
+      
+      <!-- Comments Form -->
+     
+        <h5>Leave a Comment:</h5>
+        
+          
+              <textarea class="form-control" rows="3"></textarea>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          
+       
+
+
 
 
 

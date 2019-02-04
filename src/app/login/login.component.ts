@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../shared/services/login.service';
 import{NgForm}from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,21 +12,21 @@ export class LoginComponent implements OnInit {
   mail :string;
   pwd:string;
   public new;
+  public user ={};
 
-  constructor(private logUser:LoginService) { }
+  constructor(private logUser:LoginService, private routes : Router) { }
 
   ngOnInit() {
   }
 
   loginUser(){
-    var user = {
-      email :this.mail,
-      password :this.pwd
-    };
-    console.log(user);
-    this.logUser.ApiLogin(user).subscribe(file=>{
-           this.new=file.json();
-          console.log(this.new);
+    
+    console.log(this.user);
+    this.logUser.ApiLogin(this.user).subscribe(res=>{
+           localStorage.setItem('token',res.json().token);
+          console.log(res.json().token);
+          console.log(res.json().message);
+          this.routes.navigate(['/home']);
       })
 }
 }

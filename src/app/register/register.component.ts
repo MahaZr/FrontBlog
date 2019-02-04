@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{RegisterService} from '../shared/services/register.service';
+import { Router } from '@angular/router';
 
 
 
@@ -14,9 +15,11 @@ nom :string;
 prenom:string;
 mail :string;
 pwd:string;
+
+user ={};
 public new;
 
-  constructor(private regUser:RegisterService) { }
+  constructor(private regUser:RegisterService, private routes : Router) { }
  
   ngOnInit() {
 
@@ -24,16 +27,12 @@ public new;
 
 
   registerUser(){
-    var user = {
-      name : this.nom,
-      lastname:this.prenom,
-      email : this.mail,
-      password:this.pwd
-    };
-   console.log(user);
-    this.regUser.ApiRegister(user).subscribe(file=>{
+   
+   console.log(this.user);
+    this.regUser.ApiRegister(this.user).subscribe(file=>{
           this.new=file.json();
           console.log(file.json());
+          this.routes.navigate(['/home']);
       })
 
   //}
