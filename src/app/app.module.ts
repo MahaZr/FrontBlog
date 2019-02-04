@@ -11,6 +11,10 @@ import { AuthGuard } from './shared/auth.guard';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
 import { ArtbyautComponent } from './artbyaut/artbyaut.component';
+import { DashComponent } from './dash/dash.component';
+import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.component';
+
+import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 
 
 
@@ -20,7 +24,10 @@ import { ArtbyautComponent } from './artbyaut/artbyaut.component';
     NavbarComponent,
     routingComponents,
     HomeComponent,
-    ArtbyautComponent
+    ArtbyautComponent,
+    DashComponent,
+    GestionarticleComponent,
+    GestionutilisateurComponent
 
   ],
   imports: [

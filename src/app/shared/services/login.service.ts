@@ -13,8 +13,16 @@ export class LoginService {
   public loggedIn(){
     return !!localStorage.getItem('token');
   }
+  public isAdmin(){
+    if(localStorage.getItem('admin') == "true"){
+      return true ;
+
+    }
+    else return false ;
+  }
   public logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('admin');
   }
   public getToken(){
     return localStorage.getItem('token');
