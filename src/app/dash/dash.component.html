@@ -15,8 +15,26 @@
 <ul class="navbar-primary-menu">
 <li>
   <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-  <a routerLink="/dash/gart" routerLinkActive="active"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Géré vos article</span></a>
-  <a href="#"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">Gestion des utilisateurs</span></a>
+  <a routerLink="/dash/gart" routerLinkActive="active"><span class="glyphicon glyphicon-envelope">
+
+  </span>
+     <!---->
+  <span class="nav-label"><div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Gestion des articles
+    </a>
+  
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">Vos article</a>
+      <a class="dropdown-item" href="#">Céer article</a>
+      <a class="dropdown-item" href="#">Modifier article</a>
+      <a class="dropdown-item" href="#">Effacer article</a>
+    </div>
+  </div></span></a>
+  <a href="#"><span class="glyphicon glyphicon-cog"></span>
+    <!---->
+    
+    <span class="nav-label">Gestion des utilisateurs</span></a>
   
 </li>
 </ul>
