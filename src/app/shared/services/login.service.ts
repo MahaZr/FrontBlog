@@ -30,7 +30,7 @@ export class LoginService {
   }
 
   public getUser(){
-    return jwt_decode(localStorage.getItem('token'));
+   return jwt_decode(localStorage.getItem('token'));
   }
   
 }

@@ -41,9 +41,9 @@
         <h5>Leave a Comment:</h5>
         
           
-              <textarea class="form-control" rows="3">{{}}</textarea>
+              <textarea class="form-control" rows="3" [(ngModel)] = "corp"></textarea>
 
-            <button class="btn btn-primary btn-md pull-right">comment</button>
+            <button class="btn btn-primary btn-md pull-right" (click) = "submit()">comment</button>
           
        
 
