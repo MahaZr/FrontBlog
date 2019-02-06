@@ -35,12 +35,13 @@ export class LoginComponent implements OnInit {
 
           console.log(localStorage.getItem('admin'));
           
-          console.log(this.userss);
+         // console.log(this.userss);
           
           this.routes.navigate(['/home']);
 
       })
 }
-
 }
+
+
 
