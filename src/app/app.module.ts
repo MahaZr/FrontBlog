@@ -37,9 +37,13 @@ import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer
   imports: [
     BrowserModule,
     FormsModule,
+    
     AppRoutingModule,
     HttpModule,
     HttpClientModule
+    
+    
+  
 
 
 
