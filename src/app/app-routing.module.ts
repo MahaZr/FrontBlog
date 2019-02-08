@@ -9,6 +9,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { ArtbyautComponent } from './artbyaut/artbyaut.component';
 import { DashComponent } from './dash/dash.component';
 import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.component';
+import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'nav',component:NavbarComponent},
   {path:'home',component:HomeComponent},
   {path: 'dash', component:DashComponent, canActivate : [AuthGuard], children: [
-    {path :'gart', component:GestionarticleComponent}]},
+    {path :'gart', component:GestionarticleComponent},
+  {path:'guser',component:GestionutilisateurComponent}]},
   {path:"**",component:HomeComponent}
   /*{
      path: '', redirectTo: 'home'
