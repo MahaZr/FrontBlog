@@ -17,7 +17,10 @@ export class ArticleComponent implements OnInit {
   public status = false;
   public corp:string;
   public corpss = { corps : ""};
+  public comments;
   public user;
+  public userName;
+  public idcomment;
   constructor(private article: BlogService, private comment: CommentaireService,  private routes: ActivatedRoute, private rt : Router, private auth : LoginService) { }
 
   ngOnInit() {
@@ -27,6 +30,7 @@ export class ArticleComponent implements OnInit {
       this.idArt = id;
       this.user = this.auth.getUser();
       console.log(this.user);
+      console.log(this.idArt);
     });
 
 
@@ -38,6 +42,11 @@ export class ArticleComponent implements OnInit {
       this.status = true;
     }, err => console.log(err));
 
+
+    this.comment.listerComment(this.idArt ).subscribe(file => {
+      this.comments = file;
+      console.log(file);
+    });
     
 
   
@@ -50,14 +59,43 @@ onSelect(aut){
 }
 
 submit(){
+
+  this.userName = this.user.user.name + ' '+this.user.user.lastname ;
   this.corpss.corps= this.corp;
-  this.comment.addComment(this.idArt,this.user.user._id,this.corpss).subscribe(file => {
+  this.comment.addComment(this.userName,this.idArt,this.corpss).subscribe(file => {
     console.log(file);
     console.log(this.corpss);
+    this.listercomments();
  
   });
 }
+
+listercomments(){
+
+  this.comment.listerComment(this.idArt ).subscribe(file => {
+  this.comments = file;
+  console.log(file);
+
+});
+
 }
+
+delete(){
+  this.comment.deleteComment(this.idcomment,this.user.user._id ).subscribe(file => {
+  this.comments = file;
+  console.log(file);
+  });
+}
+
+update(){
+  this.comment.updateComment(this.user.user._id,this.idcomment).subscribe(file => {
+    this.comments =file;
+    console.log(file);
+  })
+}
+
+}
+
 
 
 
