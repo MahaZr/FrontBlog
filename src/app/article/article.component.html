@@ -1,11 +1,9 @@
-
-
 <!-- Page Content -->
 <!--haka lazmou yji-->
 <div class="container">
 
   <div class="row" *ngIf="status">
-<!--malezmch famma navbar-->
+    <!--malezmch famma navbar-->
     <!-- Post Content Column -->
     <div class="col-md-12">
 
@@ -25,7 +23,8 @@
       <!-- Author -->
 
       <h6>by
-        <a (click)="onSelect(art.auteur)">{{art.auteur}}</a></h6>
+        <a (click)="onSelect(art.auteur)">{{art.auteur}}</a>
+      </h6>
 
 
 
@@ -34,21 +33,33 @@
 
 
       <p>{{art.contenu}}</p>
-      
-      
+
+
       <!-- Comments Form -->
-     
-        <h5>Leave a Comment:</h5>
-        
-          
-              <textarea class="form-control" rows="3" [(ngModel)] = "corp"></textarea>
 
-            <button class="btn btn-primary btn-md pull-right" (click) = "submit()">comment</button>
-          
-       
+      <h5>Leave a Comment:</h5>
 
 
+      <textarea class="form-control" rows="3" [(ngModel)]="corp"></textarea>
 
+      <button class="btn btn-primary btn-md float-right" (click)="submit()">comment</button>
+
+      <ul class="list-group">
+        <div *ngFor="let comment of comments">
+          <li class="list-group-item list-group-item-info">
+            <div class="media mb-4">
+
+              <div class="media-body">
+                <h5 class="mt-0">{{comment.IdUser}}</h5>
+                <p>
+                  <span class="badge badge-pill badge-secondary">{{comment.date}}</span>{{comment.corps}}</p>
+                <button class="btn btn-secondary btn-md float-right" (click)="update" *ngIf= "user.user.admin || (user.user.name +' '+user.user.lastname)==comment.IdUser">Modifier</button>
+                <button class="btn btn-danger btn-md float-right" (click)="delete()" *ngIf= "user.user.admin || (user.user.name +' '+user.user.lastname)==comment.IdUser">Delete</button>
+              </div>
+            </div>
+          </li>
+        </div>
+      </ul>
 
 
 
