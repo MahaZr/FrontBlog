@@ -88,7 +88,7 @@ delete(){
 }
 
 update(){
-  this.comment.updateComment(this.user.user._id,this.idcomment).subscribe(file => {
+  this.comment.updateComment(this.user.user._id,this.idcomment,this.corp).subscribe(file => {
     this.comments =file;
     console.log(file);
   })
