@@ -11,34 +11,22 @@
 </ul>
 -->
 <nav class="navbar-primary" style="margin-top : 10 rem !important">
-<a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
-<ul class="navbar-primary-menu">
-<li>
-  <a href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
-  <a routerLink="/dash/gart" routerLinkActive="active"><span class="glyphicon glyphicon-envelope">
-
-  </span>
-     <!---->
-  <span class="nav-label"><div class="dropdown">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Gestion des articles
-    </a>
-  
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" routerLink="/cree-article" routerLinkActive="active">Vos article</a>
-      <a class="dropdown-item" href="#">Céer article</a>
-      <a class="dropdown-item" href="#">Modifier article</a>
-      <a class="dropdown-item" href="#">Effacer article</a>
-    </div>
-  </div></span></a>
-  <a  routerLink="/dash/guser" routerLinkActive="active"><span class="glyphicon glyphicon-cog"></span>
-    <!---->
-    
-    <span class="nav-label">Gestion des utilisateurs</span></a>
-  
-</li>
-</ul>
+  <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
+  <ul class="navbar-primary-menu">
+    <li>
+      <a routerLink=""><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Dashboard</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/gart/creerarticle" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Céer article</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/gart/consulterart" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Vos article</span></a>
+    </li>
+    <li>
+      <a routerLink="/dash/guser" routerLinkActive="active"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">Gestion des utilisateurs</span></a>
+    </li>
+  </ul>
 </nav>
 <div class="main-content">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
