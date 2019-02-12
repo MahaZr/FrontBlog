@@ -1,41 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import{RegisterService} from '../shared/services/register.service';
+import { RegisterService } from '../shared/services/register.service';
 import { Router } from '@angular/router';
 
 
 
-  
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-nom :string;
-prenom:string;
-mail :string;
-pwd:string;
+  nom: string;
+  prenom: string;
+  mail: string;
+  pwd: string;
 
-user ={};
-public new;
+  user = {};
+  public new;
 
-  constructor(private regUser:RegisterService, private routes : Router) { }
- 
+  constructor(private regUser: RegisterService, private routes: Router) { }
+
   ngOnInit() {
 
   }
 
 
-  registerUser(){
-   
-   console.log(this.user);
-    this.regUser.ApiRegister(this.user).subscribe(file=>{
-          this.new=file.json();
-          console.log(file.json());
-          this.routes.navigate(['/home']);
-      })
+  registerUser() {
 
-  //}
-}
+    console.log(this.user);
+    this.regUser.ApiRegister(this.user).subscribe(file => {
+      this.new = file.json();
+      console.log(file.json());
+      this.routes.navigate(['/home']);
+    })
+
+    //}
+  }
 }
 

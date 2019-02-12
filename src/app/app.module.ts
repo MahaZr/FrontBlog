@@ -15,6 +15,8 @@ import { DashComponent } from './dash/dash.component';
 import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.component';
 
 import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
+import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
+import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
 
 
 
@@ -27,7 +29,9 @@ import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionut
     ArtbyautComponent,
     DashComponent,
     GestionarticleComponent,
-    GestionutilisateurComponent
+    GestionutilisateurComponent,
+    ListerarticleComponent,
+    CreerArticleComponent
 
   ],
   imports: [
