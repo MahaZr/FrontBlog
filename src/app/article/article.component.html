@@ -38,28 +38,54 @@
       <!-- Comments Form -->
 
       <h5>Leave a Comment:</h5>
+      <form>
 
+        <textarea class="form-control" rows="3" type="text" name="corpssss" [(ngModel)]="corp" placeholder="add comment"
+          [value]="textarea"></textarea>
 
-      <textarea class="form-control" rows="3" [(ngModel)]="corp"></textarea>
-
-      <button class="btn btn-primary btn-md float-right" (click)="submit()">comment</button>
-
+        <button type="submit" class="btn btn-primary btn-md float-right" (click)="submit()">comment</button>
+      </form>
       <ul class="list-group">
-        <div *ngFor="let comment of comments">
+        <div *ngFor="let comment of comments, index as k">
           <li class="list-group-item list-group-item-info">
             <div class="media mb-4">
 
               <div class="media-body">
-                <h5 class="mt-0">{{comment.IdUser}}</h5>
+                <h5 class="mt-0">{{comment.Username}}</h5>
                 <p>
-                  <span class="badge badge-pill badge-secondary">{{comment.date}}</span>{{comment.corps}}</p>
-                <button class="btn btn-secondary btn-md float-right" (click)="update" *ngIf= "user.user.admin || (user.user.name +' '+user.user.lastname)==comment.IdUser">Modifier</button>
-                <button class="btn btn-danger btn-md float-right" (click)="delete()" *ngIf= "user.user.admin || (user.user.name +' '+user.user.lastname)==comment.IdUser">Delete</button>
+                  <span class="badge badge-pill badge-secondary">{{comment.date|date}}</span>{{comment.corps}}</p>
+                <button class="btn btn-secondary btn-md float-right" (click)="updates(comment._id,k)"
+                  *ngIf="user.user._id==comment.IdUser">Modifier</button>
+                <button class="btn btn-danger btn-md float-right" (click)="delete(comment._id)"
+                  *ngIf="user.user.admin || user.user._id == comment.IdUser">Delete</button>
+
+
+                <div class="media-body" *ngIf="updateState && (comment._id == ucomid)">
+                  <form>
+
+                    <input class="form-control" type="text" name="corpss" [(ngModel)]="updatecorp">
+                    
+                  
+
+                    <button type="submit" class="btn btn-primary btn-md float-right"
+                      (click)="update(comment._id)">Update</button>
+                  </form>
+
+                </div>
+
+
+
+
+
               </div>
+
             </div>
           </li>
         </div>
-      </ul>
+        
+    
+    </ul>
+  </div>
 
 
 
@@ -67,10 +93,8 @@
 
 
 
-
-
-    </div>
 
   </div>
-  <!-- /.container -->
+
 </div>
+<!-- /.container -->

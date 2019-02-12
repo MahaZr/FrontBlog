@@ -16,11 +16,15 @@ export class ArticleComponent implements OnInit {
   public art;
   public status = false;
   public corp:string;
-  public corpss = { corps : ""};
-  public comments;
+  public corpss = { corps : "", userName:""};
+  public textarea='add comment';
+  public comments=[{corps:''}];
   public user;
   public userName;
   public idcomment;
+  public updatecorp;
+  public updateState = false;
+  public ucomid;
   constructor(private article: BlogService, private comment: CommentaireService,  private routes: ActivatedRoute, private rt : Router, private auth : LoginService) { }
 
   ngOnInit() {
@@ -62,9 +66,11 @@ submit(){
 
   this.userName = this.user.user.name + ' '+this.user.user.lastname ;
   this.corpss.corps= this.corp;
-  this.comment.addComment(this.userName,this.idArt,this.corpss).subscribe(file => {
+  this.corpss.userName = this.userName;
+  this.comment.addComment(this.user.user._id,this.idArt,this.corpss).subscribe(file => {
     console.log(file);
     console.log(this.corpss);
+  this.textarea='';
     this.listercomments();
  
   });
@@ -80,18 +86,27 @@ listercomments(){
 
 }
 
-delete(){
-  this.comment.deleteComment(this.idcomment,this.user.user._id ).subscribe(file => {
-  this.comments = file;
+delete(idcom){
+  this.comment.deleteComment(idcom,this.user.user._id).subscribe(file => {
+  //this.comments = file;
   console.log(file);
+  this.listercomments();
   });
 }
 
-update(){
-  this.comment.updateComment(this.user.user._id,this.idcomment,this.corp).subscribe(file => {
-    this.comments =file;
+update(idcomment){
+  this.corpss.corps=this.updatecorp;
+  this.comment.updateComment(this.user.user._id,idcomment,this.corpss).subscribe(file => {
+    //this.comments =file;
     console.log(file);
+    this.updateState=false;
+    this.listercomments();
   })
+}
+updates(idcomment,k){
+  this.updatecorp= this.comments[k].corps;
+  this.ucomid=idcomment;
+  this.updateState=true;
 }
 
 }
