@@ -11,6 +11,7 @@ import { DashComponent } from './dash/dash.component';
 import { GestionarticleComponent } from './dash/gestionarticle/gestionarticle.component';
 import { GestionutilisateurComponent } from './dash/gestionutilisateur/gestionutilisateur.component';
 import { CreerArticleComponent } from './dash/gestionarticle/creer-article/creer-article.component';
+import { ListerarticleComponent } from './dash/gestionarticle/listerarticle/listerarticle.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
     path: 'dash', component: DashComponent, children: [
       {
         path: 'gart', component: GestionarticleComponent, children: [
-          { path: 'creerarticle', component: CreerArticleComponent }
+          { path: 'creerarticle', component: CreerArticleComponent },
+          { path: 'consulterart', component:ListerarticleComponent}
         ]
       },
       { path: 'guser', component: GestionutilisateurComponent }
