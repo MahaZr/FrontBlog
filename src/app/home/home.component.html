@@ -2,7 +2,7 @@
 <div *ngFor="let art of articles; index as k">
 
     <div class="card" style="width: 40rem !important; margin-top: 2rem !important;" >
-        <img src="./../../assets/bg5.jpg" class="card-img-top" >
+        <img src="http://localhost:3001/image/viewImg/{{art.image}} " width="28rem" height="300rem" class="card-img-top" >
         <div class="card-body">
           <h5 class="card-title">{{art.titre}}</h5>
           <p>by <a>{{art.auteur}}</a></p>
